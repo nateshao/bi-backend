@@ -1,3 +1,5 @@
+server:
+  port: 8080
 #数据库连接 mysql
 spring:
   datasource:
@@ -16,7 +18,11 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml
   # 实体类映射
   #type-aliases-package:
-
+logging:
+  level:
+    com:
+      bi:
+        mapper: debug
 #logging:
 #  config: classpath:log4j.properties
 
