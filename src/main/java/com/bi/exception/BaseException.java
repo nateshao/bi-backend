@@ -1,0 +1,19 @@
+package com.bi.exception;
+
+/**
+ * @date Created by 邵桐杰 on 2022/08/02 17:47
+ * @微信公众号 千羽的编程时光
+ * @个人网站 www.nateshao.cn
+ * @博客 https://nateshao.gitee.io
+ * @GitHub https://github.com/nateshao
+ * @Gitee https://gitee.com/nateshao
+ * Description: 基础异常
+ */
+public class BaseException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
+
+    public BaseException(String message) {
+        super(message);
+    }
+
+}
