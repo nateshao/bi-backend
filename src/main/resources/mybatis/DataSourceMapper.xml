@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.bi.mapper.DataSourceMapper">
+    <resultMap id="BaseResultMap" type="com.bi.entity.DataSource">
+        <id column="ds_id" property="dsId"/>
+        <result column="ds_name" property="dsName"/>
+        <result column="link_type" property="linkType"/>
+        <result column="link_url" property="linkUrl"/>
+        <result column="link_name" property="linkName"/>
+        <result column="link_pwd" property="linkPwd"/>
+    </resultMap>
+
+    <select id="getDataSource" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select ds_id, ds_name, link_type, link_url, link_name, link_pwd
+        from data_source
+        where ds_id = #{dsId}
+    </select>
+
+    <select id="listDataSource" resultMap="BaseResultMap">
+        select ds_id, ds_name, link_type, link_url, link_name, link_pwd
+        from data_source
+    </select>
+
+    <insert id="insertDataSource" parameterType="com.bi.entity.DataSource">
+        insert into data_source (ds_id, ds_name, link_type, link_url, link_name, link_pwd)
+        values(#{dsId}, #{dsName}, #{linkType}, #{linkUrl}, #{linkName}, #{linkPwd})
+    </insert>
+
+    <delete id="deleteDataSource">
+        delete from  data_source where ds_id = #{dsId}
+    </delete>
+</mapper>

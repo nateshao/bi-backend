@@ -34,7 +34,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
+            <version>8.0.29</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
         <dependency>
@@ -54,14 +54,15 @@
             <artifactId>shiro-spring</artifactId>
             <version>1.7.1</version>
         </dependency>
+
         <!-- 本地jar -->
-<!--        <dependency>-->
-<!--            <groupId>com.rsbi.ext</groupId>-->
-<!--            <artifactId>ext3</artifactId>-->
-<!--            <version>1.5</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${project.basedir}/libs/ext3-1.5.jar</systemPath>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.rsbi.ext</groupId>
+            <artifactId>ext3</artifactId>
+            <version>1.5</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/ext3-1.5.jar</systemPath>
+        </dependency>
 <!--        &lt;!&ndash; 本地  oracle jar &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>com.oracle</groupId>-->
@@ -198,11 +199,28 @@
             <artifactId>javase</artifactId>
             <version>3.3.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.clickhouse/clickhouse-jdbc -->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.github.housepower/clickhouse-native-jdbc &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.housepower</groupId>-->
+<!--            <artifactId>clickhouse-native-jdbc</artifactId>-->
+<!--            <version>2.6.4</version>-->
+<!--        </dependency>-->
+
+        <!--         https://mvnrepository.com/artifact/com.clickhouse/clickhouse-jdbc-->
+<!--        <dependency>-->
+<!--            <groupId>com.clickhouse</groupId>-->
+<!--            <artifactId>clickhouse-jdbc</artifactId>-->
+<!--            <version>0.3.2-patch9</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>ru.yandex.clickhouse</groupId>-->
+<!--            <artifactId>clickhouse-jdbc</artifactId>-->
+<!--            <version>0.1.52</version>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>com.clickhouse</groupId>
-            <artifactId>clickhouse-jdbc</artifactId>
-            <version>0.3.2-patch9</version>
+            <groupId>cc.blynk.clickhouse</groupId>
+            <artifactId>clickhouse4j</artifactId>
+            <version>1.4.4</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
@@ -246,17 +264,20 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.8.1</version>
+            <version>5.8.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+
+        <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>2.0.0.Final</version>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.0.2</version>
         </dependency>
+
 
     </dependencies>
 
