@@ -99,6 +99,10 @@ public class StudentController {
         int i = studentService.delStudentByStuNo(stuNo);
         return toAjax(i);
     }
+    @GetMapping("/xiuyixia")
+    public AjaxResult<String> test(){
+        return AjaxResult.success("给Ivy展示一下接口的魅力！！！");
+    }
 
 
 }
