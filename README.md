@@ -8,6 +8,24 @@
 
 
 
+## 4.3接口设计
+
+1. http://localhost:8082/api/v1/datasource/list
+
+   ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220824151852392.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 demo演示
