@@ -36,21 +36,21 @@ public class DataSourceController {
     public AjaxResult<String> test(@RequestBody DataSource ds){
         boolean res = dsService.testDataSource(ds);
         if(res)
-            return AjaxResult.success("2000","连接成功");
+            return AjaxResult.success("200","连接成功");
         else
-            return AjaxResult.success("5000","连接失败");
+            return AjaxResult.success("500","连接失败");
     }
 
     @PostMapping("/save/connect")
     public AjaxResult<Boolean> save(@RequestBody DataSource ds){
         boolean res = dsService.saveDataSource(ds);
-        return AjaxResult.success("2000", res);
+        return AjaxResult.success("200", res);
     }
 
     @PostMapping("delete/connect")
     public AjaxResult<String> delete(String dsId){
         dsService.deleteDataSource(dsId);
-        return AjaxResult.success("2000","删除成功");
+        return AjaxResult.success("200","删除成功");
     }
 
     // 没写好
