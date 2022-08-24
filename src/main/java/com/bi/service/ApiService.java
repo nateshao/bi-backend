@@ -13,4 +13,6 @@ import com.bi.entity.DataSourceList;
  */
 public interface ApiService {
     public DataSourceList getDataSourceList();
+
+    DataSourceList getDBList(String dataSourceType);
 }

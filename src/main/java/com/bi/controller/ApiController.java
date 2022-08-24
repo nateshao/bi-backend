@@ -6,10 +6,12 @@ import com.bi.model.AjaxResult;
 import com.bi.service.ApiService;
 import com.bi.service.DataSourceService;
 import io.swagger.annotations.Api;
+import jakarta.validation.constraints.NotBlank;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -35,11 +37,15 @@ public class ApiController {
     private ApiService apiService;
 
     @GetMapping("/datasource/list")
-    public AjaxResult<DataSourceList> getDataSourceList(){
+    public AjaxResult<DataSourceList> getDataSourceList() {
         DataSourceList list = apiService.getDataSourceList();
-       return AjaxResult.success(list);
+        return AjaxResult.success(list);
     }
-//    @GetMapping("/db/list") // 新增内容
 
+    @GetMapping("/db/list")
+    public AjaxResult<DataSourceList> getDBList(@RequestParam @NotBlank(message = "数据源类型不能为空") String dataSourceType) {
+        DataSourceList res = apiService.getDBList(dataSourceType);
+        return AjaxResult.success(res);
+    }
 
 }

@@ -28,4 +28,11 @@ public class ApiServiceImpl implements ApiService {
     public DataSourceList getDataSourceList() {
         return apiMapper.getDataSourceList();
     }
+
+    @Override
+    public DataSourceList getDBList(String dataSourceType) {
+        return apiMapper.getDBList(dataSourceType);
+    }
+
+
 }
