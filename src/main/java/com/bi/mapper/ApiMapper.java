@@ -18,4 +18,5 @@ public interface ApiMapper {
 
     public DataSourceList getDataSourceList();
 
+    DataSourceList getDBList(String dataSourceType);
 }

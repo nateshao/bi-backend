@@ -17,4 +17,5 @@ import java.io.Serializable;
 public class DataSourceList implements Serializable {
     private String DataSourceName;
     private String DataSourceType;
+    private String DBName;
 }

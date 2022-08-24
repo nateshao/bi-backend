@@ -14,9 +14,9 @@
 
    ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220824151852392.png)
 
+2. http://localhost:9001/api/v1/db/list
 
-
-
+<img src="https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/20220824231356.png" style="zoom:200%;" />
 
 
 

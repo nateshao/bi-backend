@@ -10,5 +10,9 @@
         from data_set
     </select>
 
-
+    <select id="getDBList" parameterType="string" resultType="com.bi.entity.DataSourceList">
+        select db_name
+        from data_set
+        where data_source_type = #{data_source_type}
+    </select>
 </mapper>
