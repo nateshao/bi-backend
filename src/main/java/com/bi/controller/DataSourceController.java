@@ -38,7 +38,7 @@ public class DataSourceController {
         if(res)
             return AjaxResult.success("200","连接成功");
         else
-            return AjaxResult.success("500","连接失败");
+            return AjaxResult.error("500","连接失败");
     }
 
     @PostMapping("/save/connect")
