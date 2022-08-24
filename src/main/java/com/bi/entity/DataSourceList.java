@@ -18,4 +18,5 @@ public class DataSourceList implements Serializable {
     private String DataSourceName;
     private String DataSourceType;
     private String DBName;
+    private String TableName;
 }

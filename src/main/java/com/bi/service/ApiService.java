@@ -15,4 +15,6 @@ public interface ApiService {
     public DataSourceList getDataSourceList();
 
     DataSourceList getDBList(String dataSourceType);
+
+    DataSourceList getTableList(String dataSourceType, String dbName);
 }

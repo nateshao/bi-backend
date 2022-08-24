@@ -47,5 +47,12 @@ public class ApiController {
         DataSourceList res = apiService.getDBList(dataSourceType);
         return AjaxResult.success(res);
     }
+    @GetMapping("/table/list")
+    public AjaxResult<DataSourceList> getTableList(@RequestParam @NotBlank(message = "数据源类型不能为空") String dataSourceType,
+                                                   @RequestParam  @NotBlank(message = "dbName不能为空") String dbName
+    ) {
+        DataSourceList res = apiService.getTableList(dataSourceType,dbName);
+        return AjaxResult.success(res);
+    }
 
 }

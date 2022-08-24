@@ -15,4 +15,11 @@
         from data_set
         where data_source_type = #{data_source_type}
     </select>
+    <select id="getTableList" parameterType="string" resultType="com.bi.entity.DataSourceList">
+        select table_name
+        from data_set
+        where data_source_type = #{data_source_type,jdbcType=VARCHAR} ,db_name = #{db_name,jdbcType=VARCHAR}
+    </select>
+
+
 </mapper>

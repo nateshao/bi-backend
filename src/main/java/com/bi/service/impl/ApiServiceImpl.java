@@ -34,5 +34,10 @@ public class ApiServiceImpl implements ApiService {
         return apiMapper.getDBList(dataSourceType);
     }
 
+    @Override
+    public DataSourceList getTableList(String dataSourceType, String dbName) {
+        return apiMapper.getTableList(dataSourceType,dbName);
+    }
+
 
 }
