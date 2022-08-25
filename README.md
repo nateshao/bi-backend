@@ -22,9 +22,85 @@
 
 
 
+3. http://localhost:8082/api/v1/table/list
+
+   ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220825181713676.png)
+
+4. http://localhost:8082/api/v1/table/schema
+
+   ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220825181803986.png)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
 
 
 

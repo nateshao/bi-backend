@@ -1,6 +1,7 @@
 package com.bi.service;
 
 import com.bi.entity.DataSourceList;
+import com.bi.entity.TableSchema;
 
 /**
  * @date Created by JOYY on 2022/8/24 14:51
@@ -17,4 +18,6 @@ public interface ApiService {
     DataSourceList getDBList(String dataSourceType);
 
     DataSourceList getTableList(String dataSourceType, String dbName);
+
+    TableSchema getTableSchema(String dataSourceType, String dbName, String tableName);
 }
