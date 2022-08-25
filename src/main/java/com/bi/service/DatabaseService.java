@@ -16,13 +16,13 @@ public interface DatabaseService {
 
 
     // 根据数据库链接名称查找数据库
-    Database getDatabaseByLinkName(String linkName);
+    Database getDatabaseByDsId(Integer id);
 
     // 添加数据库
     Boolean addDatabase(Database database);
 
     // 通过链接名称删除数据库
-    Integer deleteDatabaseBylinkName(String linkName);
+    Integer deleteDatabaseByLinkName(String linkName);
 
     // 查询数据库总数
     Integer getDatabaseTotalCount(DatabaseSearchParams databaseSearchParams);

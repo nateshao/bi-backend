@@ -3,10 +3,12 @@ package com.bi.controller;
 import com.bi.entity.Database;
 import com.bi.entity.DatabaseResult;
 import com.bi.entity.DatabaseSearchParams;
+import com.bi.model.AjaxResult;
 import com.bi.model.Result;
 import com.bi.model.ResultCode;
 import com.bi.service.DatabaseService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,10 +70,10 @@ public class DatabaseController {
 
     @GetMapping("/delete")
     @ApiOperation(value = "通过链接名称删除数据库")
-    public Result deleteDatabaseBylinkName(@RequestParam String linkName) {
+    public Result deleteDatabaseByLinkName(@RequestParam String linkName) {
         Result res = new Result();
 
-        Integer num = databaseService.deleteDatabaseBylinkName(linkName);
+        Integer num = databaseService.deleteDatabaseByLinkName(linkName);
         if (num > 0) {
             res.code(ResultCode.SUCCESS).message("删除成功").data("result", null);
         } else {
@@ -82,7 +84,7 @@ public class DatabaseController {
 
     @PostMapping("/update")
     @ApiOperation(value = "更新数据库信息")
-    public Result updateUser(@RequestBody Database databaseInfo) {
+    public Result updateDatabaseByDsId(@RequestBody Database databaseInfo) {
         Result res = new Result();
         Integer num = databaseService.updateDatabase(databaseInfo);
         if (num > 0) {
@@ -93,11 +95,11 @@ public class DatabaseController {
         return res;
     }
 
-    @GetMapping("/getByLinkName")
-    @ApiOperation(value = "通过链接名称查找数据库")
-    public Result getDatabaseByLinkName(@RequestParam String linkName) {
+    @GetMapping("/getByDsId")
+    @ApiOperation(value = "通过数据库id查找数据库")
+    public Result getDatabaseByDsId(@RequestParam Integer id) {
         Result res = new Result();
-        Database database = databaseService.getDatabaseByLinkName(linkName);
+        Database database = databaseService.getDatabaseByDsId(id);
         if (null != database) {
             res.code(ResultCode.SUCCESS).message("查询成功").data("result", database);
         } else {

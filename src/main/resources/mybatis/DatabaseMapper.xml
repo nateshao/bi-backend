@@ -8,16 +8,16 @@
     <!--  查询数据库list  -->
     <select id="queryDatabase" parameterType="com.bi.entity.DatabaseSearchParams" resultType="com.bi.entity.Database">
         SELECT
-              ds_id AS dsId,
-              link_type AS linkType,
-              link_name AS linkName,
-              link_pwd AS linkPwd,
-              link_url AS linkUrl,
-              ds_name AS dsName,
-              create_time AS createTime,
-              user_name AS userName,
-              ds_port AS dsPort,
-              additional_parameters AS additionalParameters
+        ds_id AS dsId,
+        link_type AS linkType,
+        link_name AS linkName,
+        link_pwd AS linkPwd,
+        link_url AS linkUrl,
+        ds_name AS dsName,
+        create_time AS createTime,
+        user_name AS userName,
+        ds_port AS dsPort,
+        additional_parameters AS additionalParameters
         FROM data_source AS d
         <where>
             <if test="dsId != null">
@@ -32,20 +32,40 @@
         </where>
         LIMIT #{offset},#{limit}
     </select>
+
     <!--  添加数据库  -->
     <insert id="addDatabase" parameterType="com.bi.entity.Database">
         insert into data_source(link_name, link_type, link_url, ds_port, ds_name, user_name, link_pwd, additional_parameters, create_time)
-        values (#{linkName}, #{linkType}, CONCAT(#{linkUrl},#{additionalParameters}), #{dsPort}, #{dsName}, #{userName}, #{linkPwd}, #{additionalParameters}, now())
+        values (#{linkName}, #{linkType},
+        <choose>
+            <when test="additionalParameters != null">
+                CONCAT(#{linkUrl}, #{additionalParameters}),
+            </when>
+            <otherwise>
+                #{linkUrl},
+            </otherwise>
+        </choose>
+        #{dsPort}, #{dsName}, #{userName}, #{linkPwd}, #{additionalParameters}, now())
     </insert>
 
     <!-- 通过链接名称删除数据库 -->
-    <delete id="deleteDatabaseBylinkName">
+    <delete id="deleteDatabaseByLinkName">
         DELETE from data_source WHERE link_name = #{linkName}
     </delete>
     <!-- 更新数据库信息 -->
     <update id="updateDatabase" parameterType="com.bi.entity.Database">
-        update data_source set user_name = #{userName}, link_name = #{linkName}, link_type = #{linkType}, link_url = #{linkUrl}, ds_port = #{dsPort}, ds_name = #{dsName}, link_pwd = #{linkPwd}, additional_parameters = #{additionalParameters}
-        where link_name = #{linkName}
+        update data_source set user_name = #{userName}, link_name = #{linkName}, link_type = #{linkType}, link_url =
+        <choose>
+            <when test="additionalParameters != null">
+                CONCAT(#{linkUrl}, #{additionalParameters}),
+            </when>
+            <otherwise>
+                #{linkUrl},
+            </otherwise>
+        </choose>
+        ds_port = #{dsPort}, ds_name = #{dsName},
+        link_pwd = #{linkPwd}, additional_parameters = #{additionalParameters}
+        where ds_id = #{dsId}
     </update>
     <!--  获取用户总条数  -->
     <select id="getDatabaseTotalCount" parameterType="com.bi.entity.DatabaseSearchParams" resultType="java.lang.Integer">
@@ -65,7 +85,7 @@
     </select>
 
     <!--  查询数据库  -->
-    <select id="getDatabaseByLinkName" parameterType="String" resultType="com.bi.entity.Database">
+    <select id="getDatabaseByDsId" resultType="com.bi.entity.Database">
         SELECT
               ds_id AS dsId,
               link_type AS linkType,
@@ -77,6 +97,6 @@
               user_name AS userName,
               ds_port AS dsPort,
               additional_parameters AS additionalParameters
-        FROM data_source WHERE link_name = #{linkName}
+        FROM data_source WHERE ds_id = #{dsId}
     </select>
 </mapper>
