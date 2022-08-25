@@ -2,6 +2,7 @@ package com.bi.controller;
 
 import com.bi.entity.DataSource;
 import com.bi.entity.DataSourceList;
+import com.bi.entity.TableSchema;
 import com.bi.model.AjaxResult;
 import com.bi.service.ApiService;
 import com.bi.service.DataSourceService;
@@ -21,10 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @博客 https://nateshao.gitlab.io
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
- * Description:
- * 然后 commit
- * 最后push
- * 看演示
+ * Description: api接口实现
  */
 
 @Slf4j
@@ -47,12 +45,23 @@ public class ApiController {
         DataSourceList res = apiService.getDBList(dataSourceType);
         return AjaxResult.success(res);
     }
+
     @GetMapping("/table/list")
     public AjaxResult<DataSourceList> getTableList(@RequestParam @NotBlank(message = "数据源类型不能为空") String dataSourceType,
-                                                   @RequestParam  @NotBlank(message = "dbName不能为空") String dbName
+                                                   @RequestParam @NotBlank(message = "dbName不能为空") String dbName
     ) {
-        DataSourceList res = apiService.getTableList(dataSourceType,dbName);
+        DataSourceList res = apiService.getTableList(dataSourceType, dbName);
         return AjaxResult.success(res);
     }
+
+    @GetMapping("/table/schema")
+    public AjaxResult<TableSchema> getTableSchema(@RequestParam @NotBlank(message = "dataSourceType不能为空") String dataSourceType,
+                                                  @RequestParam @NotBlank(message = "dbName不能为空") String dbName,
+                                                  @RequestParam @NotBlank(message = "tableName不能为空") String tableName
+    ) {
+        TableSchema res = apiService.getTableSchema(dataSourceType, dbName, tableName);
+        return AjaxResult.success(res);
+    }
+
 
 }

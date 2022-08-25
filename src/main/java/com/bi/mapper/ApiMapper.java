@@ -2,7 +2,11 @@ package com.bi.mapper;
 
 import com.bi.entity.DataSource;
 import com.bi.entity.DataSourceList;
+import com.bi.entity.TableSchema;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Map;
 
 /**
  * @date Created by JOYY on 2022/8/24 14:55
@@ -20,5 +24,7 @@ public interface ApiMapper {
 
     DataSourceList getDBList(String dataSourceType);
 
-    DataSourceList getTableList(String dataSourceType, String dbName);
+    DataSourceList getTableList(Map<String, Object> map);
+
+    TableSchema getTableSchema(Map<String, Object> map);
 }
