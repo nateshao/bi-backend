@@ -17,9 +17,9 @@ public interface DatabaseMapper {
 
     Boolean addDatabase(Database database);
 
-    Integer deleteDatabaseBylinkName(String linkName);
+    Integer deleteDatabaseByLinkName(String linkName);
 
-    Database getDatabaseByLinkName(String linkName);
+    Database getDatabaseByDsId(Integer id);
 
     Integer updateDatabase(Database database);
 }

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Slf4j
 @Service
 public class DatabaseServiceImpl implements DatabaseService {
@@ -29,8 +28,8 @@ public class DatabaseServiceImpl implements DatabaseService {
     }
 
     @Override
-    public Database getDatabaseByLinkName(String linkName) {
-        return databaseMapper.getDatabaseByLinkName(linkName);
+    public Database getDatabaseByDsId(Integer id) {
+        return databaseMapper.getDatabaseByDsId(id);
     }
 
     @Override
@@ -39,8 +38,8 @@ public class DatabaseServiceImpl implements DatabaseService {
     }
 
     @Override
-    public Integer deleteDatabaseBylinkName(String linkName) {
-        return databaseMapper.deleteDatabaseBylinkName(linkName);
+    public Integer deleteDatabaseByLinkName(String linkName) {
+        return databaseMapper.deleteDatabaseByLinkName(linkName);
     }
 
 
