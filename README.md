@@ -3,51 +3,13 @@
 1. git clone 项目
 2. 配置数据库相关信息
    1. 创建数据库bi
-   2. 导入数据库student
+   2. 导入demo数据库student
    3. 修改数据库信息，启动项目
 
 
+## 后端开发人员
 
-## 4.3接口设计
-
-1. http://localhost:8082/api/v1/datasource/list
-
-   ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220824151852392.png)
-
-2. http://localhost:9001/api/v1/db/list
-
-<img src="https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/20220824231356.png" style="zoom:200%;" />
-
-
-
-
-
-3. http://localhost:8082/api/v1/table/list
-
-   ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220825181713676.png)
-
-4. http://localhost:8082/api/v1/table/schema
-
-   ![](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/imgimage-20220825181803986.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> 邵桐杰 +  曹倚宾 + 秦长久
 
 
 
