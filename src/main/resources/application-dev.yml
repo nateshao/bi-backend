@@ -14,8 +14,6 @@ spring:
       password: bi2022
       driver-class-name: cc.blynk.clickhouse.ClickHouseDriver
 
-
-
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mybatis/*.xml
