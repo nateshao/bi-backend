@@ -1,6 +1,6 @@
 ## 初始化工作
 
-1. git clone 项目
+1. git clone https://github.com/nateshao/bi-backend.git
 2. 配置数据库相关信息
    1. 创建数据库bi
    2. 导入demo数据库student
